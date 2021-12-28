@@ -2217,6 +2217,12 @@ video {
 .font-pj{
 font-family: 'Plus Jakarta Sans'
 }
+
+*, input, button {outline:none !important;}
+textarea:focus, input:focus{
+    outline: none;
+}
+.vg:focus {outline:none}
 </style>
 <script type="tailwind-config">
     { theme: {
@@ -2229,7 +2235,7 @@ font-family: 'Plus Jakarta Sans'
 </head>
 <body style="
     background: #fafafa;
-" data-new-gr-c-s-check-loaded="14.1003.0" data-gr-ext-installed="">
+">
 <div class="de xe">
     <header class="mf dm" x-data="{expanded: false}" style="padding-top: 1.2199rem;">
         <div class="a nf n ik qn">
@@ -2237,7 +2243,9 @@ font-family: 'Plus Jakarta Sans'
                 <div class="tc" style="
     margin-left: 8.5rem;
 ">
-                    <a href="#" title="" class="ib ee kh li ni qi">
+                    <a title="" class="ib ee kh li ni qi" style="
+    cursor: pointer;
+">
                         <span class="c jb mj">
                         <span class="af cf ef gf lh nh gh bc ob b g"></span>
                         <span class="c"> <h1 style="
@@ -2269,29 +2277,14 @@ font-family: 'Plus Jakarta Sans'
                 
 
                 <div class="lb nm sm en nn" style="margin-right: 6rem;">
-                    <a href="#" title="" class="fg mg vg oh ph ee ki font-pj di li ni qi">Privacy Policy</a>
+                    <a title="" class="fg mg vg oh ph ee ki font-pj di li ni qi" style="
+    cursor: pointer;
+" onclick="urlhai()">Privacy Policy</a>
 
                     <a href="#" title="" class="jb gd id of vf fg ng rg wg oh ph we me pe fe uh font-pj ki mi qi ni" role="button">Support Us</a>
                 </div>
             </div>
 
-            <nav x-show="expanded" x-collapse="" style="display: none;">
-                <div class="qf rf">
-                    <div class="kb nd">
-                        <a href="#" title="" class="ib gd jf m fg mg vg oh ph fe vh ki font-pj li ni qi"> Features </a>
-
-                        <a href="#" title="" class="ib gd jf m fg mg vg oh ph fe vh ki font-pj li ni qi"> Pricing </a>
-
-                        <a href="#" title="" class="ib gd jf m fg mg vg oh ph fe vh ki font-pj li ni qi"> Automation </a>
-
-                        <a href="#" title="" class="ib gd jf m fg mg vg oh ph fe vh ki font-pj li ni qi"> Customer Login </a>
-
-                        <a href="#" title="" class="jb gd id of vf fg ng rg wg oh ph we me pe fe uh font-pj ki mi qi ni" role="button">
-                            Sign up
-                        </a>
-                    </div>
-                </div>
-            </nav>
         </div>
     </header>
 
@@ -2312,7 +2305,7 @@ font-family: 'Plus Jakarta Sans'
 ">
                     
 
-                    <a title="" onclick="copyURL()" id="copyBtn" class="hb bc nf mf fg vg eh ve re ni ei ke font-pj fh jb gd id bc of vf y ig ng vg oh ph ne se hj fe font-pj ki mi qi ni xh ii ci ji th ei" role="button" style="width: max-content;">
+                    <a title="" onclick="copyURL()" id="copyBtn" class="hb bc nf mf fg vg eh ve re ni ei ke font-pj fh jb gd id bc of vf y ig ng vg oh ph ne se hj fe font-pj ki mi qi ni xh ii ci ji th ei" role="button" style="width: fit-content;width: max-content;">
                         
                         <op class="fb" id="boxid">https://jsonbox-v2.herokuapp.com/box_</op>
                     
@@ -2320,9 +2313,7 @@ font-family: 'Plus Jakarta Sans'
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></a>
                 </div>
 				<div class="tf sj uj kk dk nj eb" id="femlo" style="
-    width: max-content !important;
-    display:none;
-    padding: 10px;
+    width: max-content !important; display:none; padding:0px;
 ">
                     
 
@@ -2370,6 +2361,8 @@ font-family: 'Plus Jakarta Sans'
 		}, 300);
 
 	};
+	function urlhai(){
+	window.location.href = window.location.origin("#", "") + "#hello"
+	}
 </script>
-
-</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
+</body></html>
