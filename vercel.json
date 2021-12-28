@@ -14,8 +14,8 @@
         "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
         "Access-Control-Allow-Credentials": "true"
         },
-          "src": "/src(.*)",
-          "dest": "/www",
+          "src": "/(.*)",
+          "dest": "/www/index.html",
         "continue": true
       }
   ]
