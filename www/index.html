@@ -1,120 +1,2372 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="Cache-control" content="public" />
-	<meta
-	      name="viewport"
-	      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="description" content="A free HTTP based JSON storage" />
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A free HTTP based JSON storage" />
 	<meta name="keywords" content="json storage, json database, http" />
-	<meta property="og:url" content="https://jsonbox.io" />
-	<meta property="og:image" content="https://jsonbox.io/icon.png" />
-	<meta property="og:title" content="jsonbox.io" />
 	<meta property="og:description" content="A free HTTP based JSON storage" />
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-19124340-28"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-19124340-28');
-    </script>
-	<script src="https://kit.fontawesome.com/d2f1016e6f.js" crossorigin="anonymous"></script>
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="icon" href="icon.svg" sizes="any" type="image/svg+xml" />
-	<title>jsonbox.io | A Free HTTP based JSON storage</title>
-	<link href="/style.css" rel="stylesheet" />
-</head>
+	<title>JSONBox | A Free HTTP based JSON storage</title>
+<style class="">/*! tailwindcss v2.2.7 | MIT License | https://tailwindcss.com *//*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
-<body>
-	<section id="home">
-		<div class="wrapper">
-			
-			<h1 id="title">
-				<div id="logo">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-						<rect x="0" y="0" width="48" height="48" rx="5" ry="5" fill="#be8549" />
-						<rect x="18" y="10" width="12" height="4" rx="2" ry="2" fill="#8b5929" />
-						<path
-						      fill="#8b5929"
-						      d="M 17.81,25.78 C 17.81,25.78 17.81,26.88 17.81,26.88 17.81,27.07 17.66,27.26 17.42,27.26 17.42,27.26 17.18,27.26 17.18,27.26 17.14,27.26 17.09,27.26 17.04,27.31 16.99,27.31 16.99,27.36 16.94,27.41 16.90,27.46 16.90,27.55 16.85,27.70 16.80,27.84 16.80,28.03 16.80,28.22 16.80,28.22 16.80,29.23 16.80,29.23 16.80,29.52 16.80,29.81 16.75,30.05 16.70,30.29 16.66,30.48 16.56,30.67 16.51,30.82 16.42,30.91 16.32,31.01 16.42,31.10 16.46,31.20 16.51,31.34 16.66,31.68 16.75,32.16 16.75,32.78 16.75,32.78 16.75,34.27 16.75,34.27 16.75,34.51 16.75,34.70 16.80,34.85 16.85,34.99 16.90,35.09 16.90,35.14 16.94,35.18 16.94,35.23 16.99,35.23 17.04,35.23 17.09,35.28 17.18,35.28 17.18,35.28 17.42,35.28 17.42,35.28 17.62,35.28 17.81,35.42 17.81,35.66 17.81,35.66 17.81,36.77 17.81,36.77 17.81,36.96 17.66,37.15 17.42,37.15 17.42,37.15 17.14,37.15 17.14,37.15 16.51,37.15 16.03,36.91 15.70,36.38 15.41,35.95 15.26,35.28 15.26,34.32 15.26,34.32 15.26,32.83 15.26,32.83 15.26,32.40 15.22,32.21 15.12,32.11 15.07,32.06 15.02,32.02 14.88,32.02 14.88,32.02 14.64,32.02 14.64,32.02 14.45,32.02 14.26,31.87 14.26,31.63 14.26,31.63 14.26,30.53 14.26,30.53 14.26,30.34 14.40,30.14 14.64,30.14 14.64,30.14 14.88,30.14 14.88,30.14 14.98,30.14 15.02,30.14 15.07,30.10 15.07,30.10 15.12,30.05 15.17,30.00 15.17,29.95 15.22,29.90 15.26,29.76 15.26,29.62 15.31,29.47 15.31,29.28 15.31,29.28 15.31,28.22 15.31,28.22 15.31,27.79 15.36,27.41 15.41,27.07 15.46,26.74 15.60,26.45 15.74,26.21 15.89,25.97 16.13,25.73 16.37,25.63 16.61,25.49 16.90,25.44 17.23,25.44 17.23,25.44 17.52,25.44 17.52,25.44 17.66,25.39 17.81,25.54 17.81,25.78 Z M 21.07,32.88 C 21.12,33.02 21.17,33.17 21.17,33.31 21.17,33.46 21.12,33.60 21.07,33.74 21.02,33.89 20.93,33.98 20.83,34.08 20.74,34.18 20.64,34.27 20.50,34.32 20.35,34.37 20.21,34.42 20.06,34.42 19.92,34.42 19.78,34.37 19.63,34.32 19.49,34.27 19.39,34.18 19.30,34.08 19.20,33.98 19.10,33.89 19.06,33.74 19.01,33.60 18.96,33.46 18.96,33.31 18.96,33.17 19.01,33.02 19.06,32.88 19.10,32.74 19.20,32.64 19.30,32.54 19.39,32.45 19.49,32.35 19.63,32.30 19.92,32.21 20.21,32.21 20.50,32.30 20.64,32.35 20.74,32.45 20.83,32.54 20.93,32.64 21.02,32.74 21.07,32.88 Z M 24.96,32.88 C 25.01,33.02 25.06,33.17 25.06,33.31 25.06,33.46 25.01,33.60 24.96,33.74 24.91,33.89 24.82,33.98 24.72,34.08 24.62,34.18 24.53,34.27 24.38,34.32 24.24,34.37 24.10,34.42 23.95,34.42 23.81,34.42 23.66,34.37 23.52,34.32 23.38,34.27 23.28,34.18 23.18,34.08 23.09,33.98 22.99,33.89 22.94,33.74 22.90,33.60 22.85,33.46 22.85,33.31 22.85,33.17 22.90,33.02 22.94,32.88 22.99,32.74 23.09,32.64 23.18,32.54 23.28,32.45 23.38,32.35 23.52,32.30 23.81,32.21 24.10,32.21 24.38,32.30 24.53,32.35 24.62,32.45 24.72,32.54 24.86,32.64 24.91,32.74 24.96,32.88 Z M 28.90,32.88 C 28.94,33.02 28.99,33.17 28.99,33.31 28.99,33.46 28.94,33.60 28.90,33.74 28.85,33.89 28.75,33.98 28.66,34.08 28.56,34.18 28.46,34.27 28.32,34.32 28.18,34.37 28.03,34.42 27.89,34.42 27.74,34.42 27.60,34.37 27.46,34.32 27.31,34.27 27.22,34.18 27.12,34.08 27.02,33.98 26.93,33.89 26.88,33.74 26.83,33.60 26.78,33.46 26.78,33.31 26.78,33.17 26.83,33.02 26.88,32.88 26.93,32.74 27.02,32.64 27.12,32.54 27.22,32.45 27.31,32.35 27.46,32.30 27.74,32.21 28.03,32.21 28.32,32.30 28.46,32.35 28.56,32.45 28.66,32.54 28.75,32.64 28.85,32.74 28.90,32.88 Z M 33.70,30.38 C 33.70,30.38 33.70,31.49 33.70,31.49 33.70,31.68 33.55,31.87 33.31,31.87 33.31,31.87 33.07,31.87 33.07,31.87 32.98,31.87 32.93,31.87 32.88,31.92 32.83,31.92 32.83,31.97 32.78,32.02 32.78,32.06 32.74,32.11 32.69,32.26 32.69,32.40 32.64,32.54 32.64,32.74 32.64,32.74 32.64,34.27 32.64,34.27 32.64,34.70 32.59,35.09 32.54,35.38 32.50,35.71 32.35,36.00 32.21,36.24 32.06,36.48 31.82,36.72 31.58,36.82 31.34,36.96 31.06,37.01 30.72,37.01 30.72,37.01 30.43,37.01 30.43,37.01 30.24,37.01 30.05,36.86 30.05,36.62 30.05,36.62 30.05,35.52 30.05,35.52 30.05,35.33 30.19,35.14 30.43,35.14 30.43,35.14 30.67,35.14 30.67,35.14 30.72,35.14 30.82,35.14 30.86,35.09 30.91,35.09 30.91,35.04 30.96,34.99 31.01,34.94 31.06,34.85 31.06,34.70 31.10,34.56 31.10,34.37 31.10,34.18 31.10,34.18 31.10,32.64 31.10,32.64 31.10,32.35 31.10,32.06 31.15,31.82 31.20,31.58 31.25,31.39 31.30,31.20 31.34,31.06 31.44,30.96 31.54,30.86 31.44,30.77 31.39,30.67 31.34,30.53 31.20,30.19 31.10,29.71 31.10,29.09 31.10,29.09 31.10,28.13 31.10,28.13 31.10,27.89 31.10,27.70 31.06,27.55 31.01,27.41 30.96,27.31 30.96,27.26 30.91,27.22 30.91,27.17 30.86,27.17 30.82,27.17 30.77,27.12 30.67,27.12 30.67,27.12 30.43,27.12 30.43,27.12 30.24,27.12 30.05,26.98 30.05,26.74 30.05,26.74 30.05,25.63 30.05,25.63 30.05,25.44 30.19,25.25 30.43,25.25 30.43,25.25 30.72,25.25 30.72,25.25 31.34,25.25 31.87,25.49 32.16,26.02 32.45,26.45 32.59,27.12 32.59,28.08 32.59,28.08 32.59,29.09 32.59,29.09 32.59,29.52 32.64,29.71 32.74,29.81 32.78,29.86 32.83,29.90 32.98,29.90 32.98,29.90 33.22,29.90 33.22,29.90 33.50,30.05 33.70,30.19 33.70,30.38 Z" />
-					</svg>
-				</div>
-				<span>jsonbox.io <small>V2</small></span>
-			</h1>
-			<h3 id="subtitle">A free HTTP based JSON storage</h3>
-			<p>
-				<strong>jsonbox.io</strong> lets you store, read & modify JSON data over HTTP APIs for
-				free <strong><i>(for 30 days)</i></strong>. Copy the URL below and start sending HTTP requests to play around with your data
-				store.
-			</p>
-			<div id="random">
-				<input
-				       type="text"
-				       class="mono"
-				       id="boxurl"
-				       value="https://jsonbox.io/${BOX_ID}"
-				       readonly />
-				<button class="far fa-copy" id="copyBtn" onclick="copyURL()"></button>
-			</div>
-			<a
-			   href="https://github.com/vasanthv/jsonbox#readme"
-			   target="_blank"
-			   id="githublink"
-			   role="button">
-				<i class="fab fa-github"></i> Read the docs
-			</a>
-			<p>
-				<small>
-					By using Jsonbox.io you agree to the following terms: This service is provided under an "as is" condition. It might change or will be discontinued without prior notice. The maker of this service can't be held liable in any way for any reason.
-				</small>
-			</p>
-			<div id="footer">
-				Made with &hearts; by <a href="https://vasanthv.com" target="_blank">Vasanth.V</a>
-			</div>
-		</div>
-	</section>
-	<script>
-	const uniqueid = createUniqueID();
-	const goToDashboard = () => {
-		window.location = `/dashboard.html?box=box_${uniqueid}`;
-	};
-	const copyURL = () => {
+/*
+Document
+========
+*/
+
+/**
+Use a better box model (opinionated).
+*/
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+/**
+Use a more readable tab size (opinionated).
+*/
+
+html {
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	   tab-size: 4;
+}
+
+/**
+1. Correct the line height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+*/
+
+html {
+	line-height: 1.15; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/*
+Sections
+========
+*/
+
+/**
+Remove the margin in all browsers.
+*/
+
+body {
+	margin: 0;
+}
+
+/**
+Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+*/
+
+body {
+	font-family:
+		system-ui,
+		-apple-system, /* Firefox supports this but not yet `system-ui` */
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+}
+
+/*
+Grouping content
+================
+*/
+
+/**
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+*/
+
+hr {
+	height: 0; /* 1 */
+	color: inherit; /* 2 */
+}
+
+/*
+Text-level semantics
+====================
+*/
+
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr[title] {
+	-webkit-text-decoration: underline dotted;
+	        text-decoration: underline dotted;
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+	font-family:
+		ui-monospace,
+		SFMono-Regular,
+		Consolas,
+		'Liberation Mono',
+		Menlo,
+		monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+
+small {
+	font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+
+/**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+
+table {
+	text-indent: 0; /* 1 */
+	border-color: inherit; /* 2 */
+}
+
+/*
+Forms
+=====
+*/
+
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+1. Remove the inheritance of text transform in Firefox.
+*/
+
+button,
+select { /* 1 */
+	text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: button;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+
+::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+
+:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+
+:-moz-ui-invalid {
+	box-shadow: none;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+
+legend {
+	padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+	vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+	display: list-item;
+}/**
+ * Manually forked from SUIT CSS Base: https://github.com/suitcss/base
+ * A thin layer on top of normalize.css that provides a starting point more
+ * suitable for web applications.
+ */
+
+/**
+ * Removes the default spacing and border for appropriate elements.
+ */
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  background-image: none;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Tailwind custom reset styles
+ */
+
+/**
+ * 1. Use the user's configured `sans` font-family (with Tailwind's default
+ *    sans-serif font stack as a fallback) as a sane default.
+ * 2. Use Tailwind's default "normal" line-height so the user isn't forced
+ *    to override it to ensure consistency even when using the default theme.
+ */
+
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
+  line-height: 1.5; /* 2 */
+}
+
+
+/**
+ * Inherit font-family and line-height from `html` so users can set them as
+ * a class directly on the `html` element.
+ */
+
+body {
+  font-family: inherit;
+  line-height: inherit;
+}
+
+/**
+ * 1. Prevent padding and border from affecting element width.
+ *
+ *    We used to set this in the html element and inherit from
+ *    the parent element for everything else. This caused issues
+ *    in shadow-dom-enhanced elements like <details> where the content
+ *    is wrapped by a div with box-sizing set to `content-box`.
+ *
+ *    https://github.com/mozdevs/cssremedy/issues/4
+ *
+ *
+ * 2. Allow adding a border to an element by just adding a border-width.
+ *
+ *    By default, the way the browser specifies that an element should have no
+ *    border is by setting it's border-style to `none` in the user-agent
+ *    stylesheet.
+ *
+ *    In order to easily add borders to elements by just setting the `border-width`
+ *    property, we change the default border-style for all elements to `solid`, and
+ *    use border-width to hide them instead. This way our `border` utilities only
+ *    need to set the `border-width` property instead of the entire `border`
+ *    shorthand, making our border utilities much more straightforward to compose.
+ *
+ *    https://github.com/tailwindcss/tailwindcss/pull/116
+ */
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: currentColor; /* 2 */
+}
+
+/*
+ * Ensure horizontal rules are visible by default
+ */
+
+hr {
+  border-top-width: 1px;
+}
+
+/**
+ * Undo the `border-style: none` reset that Normalize applies to images so that
+ * our `border-{width}` utilities have the expected effect.
+ *
+ * The Normalize reset is unnecessary for us since we default the border-width
+ * to 0 on all elements.
+ *
+ * https://github.com/tailwindcss/tailwindcss/issues/362
+ */
+
+img {
+  border-style: solid;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  color: #a1a1aa;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  opacity: 1;
+  color: #a1a1aa;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: #a1a1aa;
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/**
+ * Reset links to optimize for opt-in styling instead of
+ * opt-out.
+ */
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/**
+ * Reset form element properties that are easy to forget to
+ * style explicitly so you don't inadvertently introduce
+ * styles that deviate from your design system. These styles
+ * supplement a partial reset that is already applied by
+ * normalize.css.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
+
+/**
+ * Use the configured 'mono' font family for elements that
+ * are expected to be rendered with a monospace font, falling
+ * back to the system monospace stack if there is no configured
+ * 'mono' font family.
+ */
+
+pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/**
+ * 1. Make replaced elements `display: block` by default as that's
+ *    the behavior you want almost all of the time. Inspired by
+ *    CSS Remedy, with `svg` added as well.
+ *
+ *    https://github.com/mozdevs/cssremedy/issues/14
+ * 
+ * 2. Add `vertical-align: middle` to align replaced elements more
+ *    sensibly by default when overriding `display` by adding a
+ *    utility like `inline`.
+ *
+ *    This can trigger a poorly considered linting error in some
+ *    tools but is included by design.
+ * 
+ *    https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210
+ */
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/**
+ * Constrain images and videos to the parent width and preserve
+ * their intrinsic aspect ratio.
+ *
+ * https://github.com/mozdevs/cssremedy/issues/14
+ */
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+ * Ensure the default browser behavior of the `hidden` attribute.
+ */
+
+[hidden] {
+  display: none;
+}
+
+*, ::before, ::after {
+	--tw-translate-x: 0;
+	--tw-translate-y: 0;
+	--tw-rotate: 0;
+	--tw-skew-x: 0;
+	--tw-skew-y: 0;
+	--tw-scale-x: 1;
+	--tw-scale-y: 1;
+	--tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	--tw-border-opacity: 1;
+	border-color: rgba(228, 228, 231, var(--tw-border-opacity));
+	--tw-ring-offset-shadow: 0 0 #0000;
+	--tw-ring-shadow: 0 0 #0000;
+	--tw-shadow: 0 0 #0000;
+	--tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+	--tw-ring-offset-width: 0px;
+	--tw-ring-offset-color: #fff;
+	--tw-ring-color: rgba(59, 130, 246, 0.5);
+	--tw-ring-offset-shadow: 0 0 #0000;
+	--tw-ring-shadow: 0 0 #0000;
+	--tw-shadow: 0 0 #0000;
+	--tw-blur: var(--tw-empty,/*!*/ /*!*/);
+	--tw-brightness: var(--tw-empty,/*!*/ /*!*/);
+	--tw-contrast: var(--tw-empty,/*!*/ /*!*/);
+	--tw-grayscale: var(--tw-empty,/*!*/ /*!*/);
+	--tw-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
+	--tw-invert: var(--tw-empty,/*!*/ /*!*/);
+	--tw-saturate: var(--tw-empty,/*!*/ /*!*/);
+	--tw-sepia: var(--tw-empty,/*!*/ /*!*/);
+	--tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
+	--tw-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.a {
+	width: 100%;
+}
+@media (min-width: 640px) {
+
+	.a {
+		max-width: 640px;
+	}
+}
+@media (min-width: 768px) {
+
+	.a {
+		max-width: 768px;
+	}
+}
+@media (min-width: 1024px) {
+
+	.a {
+		max-width: 1024px;
+	}
+}
+@media (min-width: 1280px) {
+
+	.a {
+		max-width: 1280px;
+	}
+}
+@media (min-width: 1536px) {
+
+	.a {
+		max-width: 1536px;
+	}
+}
+.b {
+	position: absolute;
+}
+.c {
+	position: relative;
+}
+.d {
+	top: -0.5rem;
+	right: -0.5rem;
+	bottom: -0.5rem;
+	left: -0.5rem;
+}
+.e {
+	top: -0.25rem;
+	right: -0.25rem;
+	bottom: -0.25rem;
+	left: -0.25rem;
+}
+.f {
+	top: 4rem;
+	right: 4rem;
+	bottom: 4rem;
+	left: 4rem;
+}
+.g {
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+}
+.h {
+	top: -1rem;
+	right: -1rem;
+	bottom: -1rem;
+	left: -1rem;
+}
+.i {
+	top: -1px;
+	right: -1px;
+	bottom: -1px;
+	left: -1px;
+}
+.j {
+	left: 0px;
+	right: 0px;
+}
+.k {
+	top: 9rem;
+}
+.l {
+	grid-column: span 2 / span 2;
+}
+.m {
+	margin: -0.75rem;
+}
+.n {
+	margin-left: auto;
+	margin-right: auto;
+}
+.o {
+	margin-left: 2rem;
+	margin-right: 2rem;
+}
+.p {
+	margin-top: -0.25rem;
+	margin-bottom: -0.25rem;
+}
+.q {
+	margin-top: 1.75rem;
+}
+.r {
+	margin-top: 2.5rem;
+}
+.s {
+	margin-top: 3rem;
+}
+.t {
+	margin-top: 1.5rem;
+}
+.u {
+	margin-top: 2rem;
+}
+.v {
+	margin-top: 4rem;
+}
+.w {
+	margin-top: 3.5rem;
+}
+.x {
+	margin-top: 0.5rem;
+}
+.y {
+	margin-top: 1rem;
+}
+.z {
+	margin-left: 0.75rem;
+}
+.ab {
+	margin-top: 1.25rem;
+}
+.bb {
+	margin-top: 0.125rem;
+}
+.cb {
+	margin-top: 0px;
+}
+.db {
+	margin-left: 1.25rem;
+}
+.eb {
+	margin-top: 2.25rem;
+}
+.fb {
+	margin-right: 0.5rem;
+}
+.gb {
+	margin-top: 0.625rem;
+}
+.hb {
+	display: block;
+}
+.ib {
+	display: flex;
+}
+.jb {
+	display: inline-flex;
+}
+.kb {
+	display: grid;
+}
+.lb {
+	display: none;
+}
+.mb {
+	height: 1.75rem;
+}
+.nb {
+	height: 1rem;
+}
+.ob {
+	height: 100%;
+}
+.pb {
+	height: 2rem;
+}
+.qb {
+	height: 2.5rem;
+}
+.rb {
+	height: 1.5rem;
+}
+.sb {
+	height: auto;
+}
+.tb {
+	height: 2.75rem;
+}
+.ub {
+	height: 3rem;
+}
+.vb {
+	height: 1.25rem;
+}
+.wb {
+	height: 66.666667%;
+}
+.xb {
+	height: 2.25rem;
+}
+.yb {
+	height: 7rem;
+}
+.zb {
+	width: 1.75rem;
+}
+.ac {
+	width: auto;
+}
+.bc {
+	width: 100%;
+}
+.cc {
+	width: 2.5rem;
+}
+.dc {
+	width: 1.5rem;
+}
+.ec {
+	width: 11rem;
+}
+.fc {
+	width: 2.75rem;
+}
+.gc {
+	width: 1.25rem;
+}
+.hc {
+	width: 1rem;
+}
+.ic {
+	width: 7rem;
+}
+.jc {
+	max-width: 80rem;
+}
+.kc {
+	max-width: 48rem;
+}
+.lc {
+	max-width: 42rem;
+}
+.mc {
+	max-width: 32rem;
+}
+.nc {
+	max-width: 56rem;
+}
+.oc {
+	max-width: 28rem;
+}
+.pc {
+	max-width: 36rem;
+}
+.qc {
+	max-width: 24rem;
+}
+.rc {
+	max-width: 64rem;
+}
+.sc {
+	flex: 1 1 0%;
+}
+.tc {
+	flex-shrink: 0;
+}
+.uc {
+	--tw-rotate: 180deg;
+	transform: var(--tw-transform);
+}
+.vc {
+	--tw-rotate: -3deg;
+	transform: var(--tw-transform);
+}
+.wc {
+	--tw-scale-x: 1.1;
+	--tw-scale-y: 1.1;
+	transform: var(--tw-transform);
+}
+.xc {
+	transform: var(--tw-transform);
+}
+.yc {
+	list-style-position: outside;
+}
+.zc {
+	list-style-type: disc;
+}
+.bd {
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.cd {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.dd {
+	flex-direction: column;
+}
+.ed {
+	align-items: flex-start;
+}
+.fd {
+	align-items: flex-end;
+}
+.gd {
+	align-items: center;
+}
+.hd {
+	justify-content: flex-start;
+}
+.id {
+	justify-content: center;
+}
+.jd {
+	justify-content: space-between;
+}
+.kd {
+	gap: 1.25rem;
+}
+.ld {
+	gap: 2rem;
+}
+.md {
+	gap: 2.5rem;
+}
+.nd {
+	row-gap: 1.75rem;
+}
+.od {
+	row-gap: 3rem;
+}
+.pd {
+	row-gap: 1.5rem;
+}
+.qd {
+	row-gap: 2rem;
+}
+.rd {
+	-moz-column-gap: 5rem;
+	     column-gap: 5rem;
+}
+.sd {
+	row-gap: 0.75rem;
+}
+.td {
+	-moz-column-gap: 3rem;
+	     column-gap: 3rem;
+}
+.ud {
+	row-gap: 4rem;
+}
+.vd {
+	-moz-column-gap: 4rem;
+	     column-gap: 4rem;
+}
+.wd > :not([hidden]) ~ :not([hidden]) {
+	--tw-space-y-reverse: 0;
+	margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+	margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+.xd > :not([hidden]) ~ :not([hidden]) {
+	--tw-space-x-reverse: 0;
+	margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+	margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.yd > :not([hidden]) ~ :not([hidden]) {
+	--tw-space-x-reverse: 0;
+	margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+	margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.zd > :not([hidden]) ~ :not([hidden]) {
+	--tw-space-y-reverse: 0;
+	margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+	margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+.ae > :not([hidden]) ~ :not([hidden]) {
+	--tw-space-y-reverse: 0;
+	margin-top: calc(1.75rem * calc(1 - var(--tw-space-y-reverse)));
+	margin-bottom: calc(1.75rem * var(--tw-space-y-reverse));
+}
+.be > :not([hidden]) ~ :not([hidden]) {
+	--tw-space-y-reverse: 0;
+	margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+	margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+.ce {
+	overflow: hidden;
+}
+.de {
+	overflow-x: hidden;
+}
+.ee {
+	border-radius: 0.25rem;
+}
+.fe {
+	border-radius: 0.75rem;
+}
+.ge {
+	border-radius: 9999px;
+}
+.he {
+	border-radius: 0.5rem;
+}
+.ie {
+	border-radius: 1.5rem;
+}
+.je {
+	border-radius: 1rem;
+}
+.ke {
+	border-top-left-radius: 0.75rem;
+	border-bottom-left-radius: 0.75rem;
+}
+.le {
+	border-top-right-radius: 0.75rem;
+	border-bottom-right-radius: 0.75rem;
+}
+.me {
+	border-width: 1px;
+}
+.ne {
+	border-width: 2px;
+}
+.oe {
+	border-left-width: 2px;
+}
+.pe {
+	border-color: transparent;
+}
+.qe {
+	--tw-border-opacity: 1;
+	border-color: rgba(24, 24, 27, var(--tw-border-opacity));
+}
+.re {
+	--tw-border-opacity: 1;
+	border-color: rgba(212, 212, 216, var(--tw-border-opacity));
+}
+.se {
+	--tw-border-opacity: 1;
+	border-color: rgba(161, 161, 170, var(--tw-border-opacity));
+}
+.te {
+	--tw-border-opacity: 1;
+	border-color: rgba(82, 82, 91, var(--tw-border-opacity));
+}
+.ue {
+	--tw-border-opacity: 1;
+	border-color: rgba(228, 228, 231, var(--tw-border-opacity));
+}
+.ve {
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+.we {
+	--tw-bg-opacity: 1;
+	background-color: rgba(24, 24, 27, var(--tw-bg-opacity));
+}
+.xe {
+	--tw-bg-opacity: 1;
+	background-color: rgba(250, 250, 250, var(--tw-bg-opacity));
+}
+.ye {
+	background-color: transparent;
+}
+.ze {
+	background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+.af {
+	background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+.bf {
+	--tw-gradient-from: transparent;
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
+}
+.cf {
+	--tw-gradient-from: #44BCFF;
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(68, 188, 255, 0));
+}
+.df {
+	--tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
+}
+.ef {
+	--tw-gradient-stops: var(--tw-gradient-from), #FF44EC, var(--tw-gradient-to, rgba(255, 68, 236, 0));
+}
+.ff {
+	--tw-gradient-to: #fafafa;
+}
+.gf {
+	--tw-gradient-to: #FF675E;
+}
+.hf {
+	-o-object-fit: contain;
+	   object-fit: contain;
+}
+.if {
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+.jf {
+	padding: 0.75rem;
+}
+.kf {
+	padding: 0.5rem;
+}
+.lf {
+	padding: 1.5rem;
+}
+.mf {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.nf {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.of {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+.pf {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+.qf {
+	padding-left: 0.25rem;
+	padding-right: 0.25rem;
+}
+.rf {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+.sf {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+.tf {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+.uf {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+.vf {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+}
+.wf {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+.xf {
+	padding-left: 2.25rem;
+	padding-right: 2.25rem;
+}
+.yf {
+	padding-left: 4rem;
+	padding-right: 4rem;
+}
+.zf {
+	padding-top: 0.875rem;
+	padding-bottom: 0.875rem;
+}
+.ag {
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+}
+.bg {
+	padding-left: 1.25rem;
+}
+.cg {
+	padding-top: 3rem;
+}
+.dg {
+	padding-bottom: 3rem;
+}
+.eg {
+	text-align: center;
+}
+.fg {
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+.gg {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}
+.hg {
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+}
+.ig {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+.jg {
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+}
+.kg {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+}
+.lg {
+	font-size: 3rem;
+	line-height: 1;
+}
+.mg {
+	font-weight: 500;
+}
+.ng {
+	font-weight: 700;
+}
+.og {
+	font-weight: 400;
+}
+.pg {
+	text-transform: uppercase;
+}
+.qg {
+	font-style: italic;
+}
+.rg {
+	line-height: 1.75rem;
+}
+.sg {
+	line-height: 1.25;
+}
+.tg {
+	line-height: 1.625;
+}
+.ug {
+	letter-spacing: 0.1em;
+}
+.vg {
+	--tw-text-opacity: 1;
+	color: rgba(24, 24, 27, var(--tw-text-opacity));
+}
+.wg {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.xg {
+	--tw-text-opacity: 1;
+	color: rgba(161, 161, 170, var(--tw-text-opacity));
+}
+.yg {
+	--tw-text-opacity: 1;
+	color: rgba(82, 82, 91, var(--tw-text-opacity));
+}
+.zg {
+	--tw-text-opacity: 1;
+	color: rgba(212, 212, 216, var(--tw-text-opacity));
+}
+.ah {
+	--tw-text-opacity: 1;
+	color: rgba(63, 63, 70, var(--tw-text-opacity));
+}
+.bh {
+	--tw-text-opacity: 1;
+	color: rgba(113, 113, 122, var(--tw-text-opacity));
+}
+.ch::-moz-placeholder {
+	--tw-placeholder-opacity: 1;
+	color: rgba(24, 24, 27, var(--tw-placeholder-opacity));
+}
+.ch:-ms-input-placeholder {
+	--tw-placeholder-opacity: 1;
+	color: rgba(24, 24, 27, var(--tw-placeholder-opacity));
+}
+.ch::placeholder {
+	--tw-placeholder-opacity: 1;
+	color: rgba(24, 24, 27, var(--tw-placeholder-opacity));
+}
+.dh::-moz-placeholder {
+	--tw-placeholder-opacity: 1;
+	color: rgba(161, 161, 170, var(--tw-placeholder-opacity));
+}
+.dh:-ms-input-placeholder {
+	--tw-placeholder-opacity: 1;
+	color: rgba(161, 161, 170, var(--tw-placeholder-opacity));
+}
+.dh::placeholder {
+	--tw-placeholder-opacity: 1;
+	color: rgba(161, 161, 170, var(--tw-placeholder-opacity));
+}
+.eh::-moz-placeholder {
+	--tw-placeholder-opacity: 1;
+	color: rgba(82, 82, 91, var(--tw-placeholder-opacity));
+}
+.eh:-ms-input-placeholder {
+	--tw-placeholder-opacity: 1;
+	color: rgba(82, 82, 91, var(--tw-placeholder-opacity));
+}
+.eh::placeholder {
+	--tw-placeholder-opacity: 1;
+	color: rgba(82, 82, 91, var(--tw-placeholder-opacity));
+}
+.fh {
+	caret-color: #18181b;
+}
+.gh {
+	opacity: 0.3;
+}
+.hh {
+	opacity: 0.7;
+}
+.ih {
+	opacity: 0.2;
+}
+.jh {
+	--tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.kh {
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+}
+.lh {
+	--tw-blur: blur(16px);
+	filter: var(--tw-filter);
+}
+.mh {
+	--tw-drop-shadow: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+	filter: var(--tw-filter);
+}
+.nh {
+	filter: var(--tw-filter);
+}
+.oh {
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}
+.ph {
+	transition-duration: 200ms;
+}
+.qh {
+	transition-duration: 1000ms;
+}
+.rh {
+	transition-duration: 300ms;
+}
+.sh:hover {
+	--tw-translate-x: 0.25rem;
+	transform: var(--tw-transform);
+}
+.th:hover {
+	--tw-border-opacity: 1;
+	border-color: rgba(24, 24, 27, var(--tw-border-opacity));
+}
+.uh:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(82, 82, 91, var(--tw-bg-opacity));
+}
+.vh:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(250, 250, 250, var(--tw-bg-opacity));
+}
+.wh:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(244, 244, 245, var(--tw-bg-opacity));
+}
+.xh:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(24, 24, 27, var(--tw-bg-opacity));
+}
+.yh:hover {
+	--tw-bg-opacity: 0.9;
+}
+.zh:hover {
+	--tw-text-opacity: 1;
+	color: rgba(82, 82, 91, var(--tw-text-opacity));
+}
+.ai:hover {
+	--tw-text-opacity: 1;
+	color: rgba(24, 24, 27, var(--tw-text-opacity));
+}
+.bi:hover {
+	--tw-text-opacity: 1;
+	color: rgba(212, 212, 216, var(--tw-text-opacity));
+}
+.ci:hover {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.di:hover {
+	--tw-text-opacity: 0.5;
+}
+.ei:focus {
+	--tw-border-opacity: 1;
+	border-color: rgba(24, 24, 27, var(--tw-border-opacity));
+}
+.fi:focus {
+	--tw-border-opacity: 1;
+	border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+}
+.gi:focus {
+	--tw-bg-opacity: 1;
+	background-color: rgba(228, 228, 231, var(--tw-bg-opacity));
+}
+.hi:focus {
+	--tw-bg-opacity: 1;
+	background-color: rgba(82, 82, 91, var(--tw-bg-opacity));
+}
+.ii:focus {
+	--tw-bg-opacity: 1;
+	background-color: rgba(24, 24, 27, var(--tw-bg-opacity));
+}
+.ji:focus {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.ki:focus {
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+}
+.li:focus {
+	--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+	--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+	box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.mi:focus {
+	--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+	--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+	box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.ni:focus {
+	--tw-ring-opacity: 1;
+	--tw-ring-color: rgba(24, 24, 27, var(--tw-ring-opacity));
+}
+.oi:focus {
+	--tw-ring-opacity: 1;
+	--tw-ring-color: rgba(228, 228, 231, var(--tw-ring-opacity));
+}
+.pi:focus {
+	--tw-ring-opacity: 1;
+	--tw-ring-color: rgba(255, 255, 255, var(--tw-ring-opacity));
+}
+.qi:focus {
+	--tw-ring-offset-width: 2px;
+}
+.ri:hover .si {
+	top: -0.375rem;
+	right: -0.375rem;
+	bottom: -0.375rem;
+	left: -0.375rem;
+}
+.ri:hover .ti {
+	top: -0.25rem;
+	right: -0.25rem;
+	bottom: -0.25rem;
+	left: -0.25rem;
+}
+.ri:hover .ui {
+	opacity: 1;
+}
+.ri:hover .vi {
+	transition-duration: 200ms;
+}
+@media (min-width: 640px) {
+
+	.wi {
+		position: absolute;
+	}
+
+	.xi {
+		top: 0px;
+		bottom: 0px;
+	}
+
+	.yi {
+		right: 0px;
+	}
+
+	.zi {
+		order: 2;
+	}
+
+	.aj {
+		order: 1;
+	}
+
+	.bj {
+		grid-column: span 1 / span 1;
+	}
+
+	.cj {
+		grid-column: span 3 / span 3;
+	}
+
+	.dj {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	.ej {
+		margin-top: 3rem;
+	}
+
+	.fj {
+		margin-top: 2rem;
+	}
+
+	.gj {
+		margin-top: 2.5rem;
+	}
+
+	.hj {
+		margin-top: 0px;
+	}
+
+	.ij {
+		margin-top: 4rem;
+	}
+
+	.jj {
+		margin-top: 1.25rem;
+	}
+
+	.kj {
+		margin-left: 3rem;
+	}
+
+	.lj {
+		display: block;
+	}
+
+	.mj {
+		display: inline;
+	}
+
+	.nj {
+		display: flex;
+	}
+
+	.oj {
+		width: auto;
+	}
+
+	.pj {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.qj {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.rj {
+		align-items: flex-start;
+	}
+
+	.sj {
+		align-items: center;
+	}
+
+	.tj {
+		justify-content: flex-end;
+	}
+
+	.uj {
+		justify-content: center;
+	}
+
+	.vj {
+		justify-content: space-between;
+	}
+
+	.wj {
+		gap: 4rem;
+	}
+
+	.xj {
+		-moz-column-gap: 3rem;
+		     column-gap: 3rem;
+	}
+
+	.yj {
+		row-gap: 2rem;
+	}
+
+	.zj {
+		-moz-column-gap: 4rem;
+		     column-gap: 4rem;
+	}
+
+	.ak > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(4rem * var(--tw-space-x-reverse));
+		margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+
+	.bk > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(2rem * var(--tw-space-x-reverse));
+		margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+
+	.ck > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(3rem * var(--tw-space-x-reverse));
+		margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+
+	.dk > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+		margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+
+	.ek {
+		border-radius: 0.75rem;
+	}
+
+	.fk {
+		border-width: 1px;
+	}
+
+	.gk {
+		border-style: none;
+	}
+
+	.hk {
+		--tw-border-opacity: 1;
+		border-color: rgba(161, 161, 170, var(--tw-border-opacity));
+	}
+
+	.ik {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+
+	.jk {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+
+	.kk {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.lk {
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+	}
+
+	.mk {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+
+	.nk {
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+	}
+
+	.ok {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.pk {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+
+	.qk {
+		padding-top: 4rem;
+	}
+
+	.rk {
+		padding-bottom: 4rem;
+	}
+
+	.sk {
+		padding-right: 0.5rem;
+	}
+
+	.tk {
+		padding-right: 0.75rem;
+	}
+
+	.uk {
+		text-align: left;
+	}
+
+	.vk {
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+	}
+
+	.wk {
+		font-size: 3rem;
+		line-height: 1;
+	}
+
+	.xk {
+		line-height: 1.25;
+	}
+
+	.yk:focus-within {
+		--tw-border-opacity: 1;
+		border-color: rgba(24, 24, 27, var(--tw-border-opacity));
+	}
+
+	.zk:focus-within {
+		--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+		--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+		box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+	}
+
+	.al:focus-within {
+		--tw-ring-opacity: 1;
+		--tw-ring-color: rgba(24, 24, 27, var(--tw-ring-opacity));
+	}
+
+	.bl:focus {
+		border-color: transparent;
+	}
+
+	.cl:focus {
+		--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+		--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+		box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+	}
+}
+@media (min-width: 768px) {
+
+	.dl {
+		order: 2;
+	}
+
+	.el {
+		order: 1;
+	}
+
+	.fl {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	.gl {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.hl {
+		margin-top: 0px;
+	}
+
+	.il {
+		margin-top: 5rem;
+	}
+
+	.jl {
+		margin-top: 2.5rem;
+	}
+
+	.kl {
+		margin-top: 4rem;
+	}
+
+	.ll {
+		display: block;
+	}
+
+	.ml {
+		display: flex;
+	}
+
+	.nl {
+		display: none;
+	}
+
+	.ol {
+		width: 100%;
+	}
+
+	.pl {
+		max-width: none;
+	}
+
+	.ql {
+		max-width: 42rem;
+	}
+
+	.rl {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.sl {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.tl {
+		align-items: center;
+	}
+
+	.ul {
+		justify-content: flex-end;
+	}
+
+	.vl {
+		justify-content: space-between;
+	}
+
+	.wl {
+		gap: 0px;
+	}
+
+	.xl {
+		-moz-column-gap: 4rem;
+		     column-gap: 4rem;
+	}
+
+	.yl > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(3rem * var(--tw-space-x-reverse));
+		margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+
+	.zl {
+		border-left-width: 1px;
+	}
+
+	.am {
+		border-top-width: 1px;
+	}
+
+	.bm {
+		--tw-border-opacity: 1;
+		border-color: rgba(228, 228, 231, var(--tw-border-opacity));
+	}
+
+	.cm {
+		padding: 2rem;
+	}
+
+	.dm {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
+	.em {
+		text-align: left;
+	}
+}
+@media (min-width: 1024px) {
+
+	.fm {
+		order: 2;
+	}
+
+	.gm {
+		order: 1;
+	}
+
+	.hm {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	.im {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.jm {
+		margin-left: -0.5rem;
+		margin-right: -0.5rem;
+	}
+
+	.km {
+		margin-top: 6rem;
+	}
+
+	.lm {
+		margin-top: 0px;
+	}
+
+	.mm {
+		margin-left: 2.5rem;
+	}
+
+	.nm {
+		margin-left: auto;
+	}
+
+	.om {
+		margin-left: 4rem;
+	}
+
+	.pm {
+		margin-top: 5rem;
+	}
+
+	.qm {
+		margin-top: 0.75rem;
+	}
+
+	.rm {
+		display: block;
+	}
+
+	.sm {
+		display: flex;
+	}
+
+	.tm {
+		display: none;
+	}
+
+	.um {
+		max-width: 100%;
+	}
+
+	.vm {
+		max-width: 56rem;
+	}
+
+	.wm {
+		max-width: none;
+	}
+
+	.xm {
+		max-width: 72rem;
+	}
+
+	.ym {
+		max-width: 64rem;
+	}
+
+	.zm {
+		--tw-translate-y: 3rem;
+		transform: var(--tw-transform);
+	}
+
+	.an {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.bn {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.cn {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
+
+	.dn {
+		flex-direction: row;
+	}
+
+	.en {
+		align-items: center;
+	}
+
+	.fn {
+		justify-content: flex-start;
+	}
+
+	.gn {
+		justify-content: flex-end;
+	}
+
+	.hn {
+		justify-content: center;
+	}
+
+	.in {
+		justify-content: space-between;
+	}
+
+	.jn {
+		-moz-column-gap: 4rem;
+		     column-gap: 4rem;
+	}
+
+	.kn {
+		-moz-column-gap: 2rem;
+		     column-gap: 2rem;
+	}
+
+	.ln > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(4rem * var(--tw-space-x-reverse));
+		margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+
+	.mn > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(2rem * var(--tw-space-x-reverse));
+		margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+
+	.nn > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+		margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+
+	.on > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(6rem * var(--tw-space-x-reverse));
+		margin-left: calc(6rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+
+	.pn {
+		padding: 3.5rem;
+	}
+
+	.qn {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.rn {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+
+	.sn {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}
+
+	.tn {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+
+	.un {
+		padding-top: 3.5rem;
+		padding-bottom: 3.5rem;
+	}
+
+	.vn {
+		padding-top: 5rem;
+	}
+
+	.wn {
+		padding-top: 2rem;
+	}
+
+	.xn {
+		padding-right: 3rem;
+	}
+
+	.yn {
+		padding-right: 4rem;
+	}
+
+	.zn {
+		text-align: left;
+	}
+
+	.ao {
+		font-size: 3.75rem;
+		line-height: 1;
+	}
+
+	.bo {
+		line-height: 1.25;
+	}
+}
+@media (min-width: 1280px) {
+
+	.co {
+		margin-left: 4rem;
+	}
+
+	.do {
+		margin-top: 0px;
+	}
+
+	.eo {
+		margin-top: 6rem;
+	}
+
+	.fo {
+		display: block;
+	}
+
+	.go {
+		display: flex;
+	}
+
+	.ho {
+		max-width: 56rem;
+	}
+
+	.io {
+		max-width: none;
+	}
+
+	.jo {
+		max-width: 28rem;
+	}
+
+	.ko {
+		--tw-translate-x: 1.5rem;
+		transform: var(--tw-transform);
+	}
+
+	.lo {
+		--tw-translate-x: 3rem;
+		transform: var(--tw-transform);
+	}
+
+	.mo {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.no {
+		align-items: center;
+	}
+
+	.oo {
+		justify-content: space-between;
+	}
+
+	.po {
+		-moz-column-gap: 8rem;
+		     column-gap: 8rem;
+	}
+
+	.qo {
+		-moz-column-gap: 6rem;
+		     column-gap: 6rem;
+	}
+
+	.ro > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(4rem * var(--tw-space-x-reverse));
+		margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+
+	.so > :not([hidden]) ~ :not([hidden]) {
+		--tw-space-x-reverse: 0;
+		margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+		margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+	}
+
+	.to {
+		background-image: linear-gradient(to right, var(--tw-gradient-stops));
+	}
+
+	.uo {
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+	}
+
+	.vo {
+		padding-right: 4rem;
+	}
+
+	.wo {
+		padding-left: 5rem;
+	}
+
+	.xo {
+		text-align: left;
+	}
+
+	.yo {
+		font-size: 3rem;
+		line-height: 1;
+	}
+}</style>
+<script src="https://unpkg.com/alpinejs" defer=""></script>
+<!-- <script src="https://unpkg.com/tailwindcss-jit-cdn"></script> -->
+
+<style>
+                        @font-face{
+                font-family:Plus Jakarta Sans;
+                font-weight:400;
+                src:url("https://cdn.rareblocks.xyz/fonts/PlusJakartaSans/PlusJakartaSans-Regular.woff") format("woff2")
+            }
+            
+            @font-face{
+                font-family:Plus Jakarta Sans;
+                font-weight:400;
+                font-style:italic;
+                src:url("https://cdn.rareblocks.xyz/fonts/PlusJakartaSans/PlusJakartaSans-Italic.woff") format("woff2")
+            }
+            
+            @font-face{
+                font-family:Plus Jakarta Sans;
+                font-weight:500;
+                src:url("https://cdn.rareblocks.xyz/fonts/PlusJakartaSans/PlusJakartaSans-Medium.woff") format("woff2")
+            }
+            @font-face{
+                font-family:Plus Jakarta Sans;
+                font-weight:500;
+                font-style:italic;
+                src:url("https://cdn.rareblocks.xyz/fonts/PlusJakartaSans/PlusJakartaSans-MediumItalic.woff") format("woff2")
+            }
+            @font-face{
+                font-family:Plus Jakarta Sans;
+                font-weight:600;
+                src:url("https://cdn.rareblocks.xyz/fonts/PlusJakartaSans/PlusJakartaSans-SemiBold.woff") format("woff2")
+            }
+            @font-face{
+                font-family:Plus Jakarta Sans;
+                font-weight:700;
+                src:url("https://cdn.rareblocks.xyz/fonts/PlusJakartaSans/PlusJakartaSans-Bold.woff") format("woff2")
+            }
+
+
+@media only screen and (max-width: 600px) {
+  header {
+  display:none;
+  }
+  #femlo {
+  display:block !important;
+  } #vemlo{display:none;}
+}
+
+.font-pj{
+font-family: 'Plus Jakarta Sans'
+}
+</style>
+<script type="tailwind-config">
+    { theme: {
+        fontFamily: {
+            'pj': ['Plus Jakarta Sans'],
+        },
+    }
+}
+</script>
+</head>
+<body style="
+    background: #fafafa;
+">
+<div class="de xe">
+    <header class="mf dm" x-data="{expanded: false}" style="padding-top: 1.2199rem;">
+        <div class="a nf n ik qn">
+            <div class="ib gd jd">
+                <div class="tc" style="
+    margin-left: 8.5rem;
+">
+                    <a href="#" title="" class="ib ee kh li ni qi">
+                        <span class="c jb mj">
+                        <span class="af cf ef gf lh nh gh bc ob b g"></span>
+                        <span class="c"> <h1 style="
+    font-size: revert;
+    font-weight: 900;
+    margin-top: -4.45678px;
+    font-family: 'Plus Jakarta Sans';
+" class="vg">JSONBox</h1> </span>
+                    </span>
+                    </a>
+                </div>
+
+                <div class="ib tm">
+                    <button type="button" class="vg" @click="expanded = !expanded" :aria-expanded="expanded" aria-expanded="false">
+                        <span x-show="!expanded" aria-hidden="true">
+                            <svg class="zb mb" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </span>
+
+                        <span x-show="expanded" aria-hidden="true" style="display: none;">
+                            <svg class="zb mb" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+
+                
+
+                <div class="lb nm sm en nn" style="margin-right: 6rem;">
+                    <a href="#" title="" class="fg mg vg oh ph ee ki font-pj di li ni qi">Privacy Policy</a>
+
+                    <a href="#" title="" class="jb gd id of vf fg ng rg wg oh ph we me pe fe uh font-pj ki mi qi ni" role="button">Support Us</a>
+                </div>
+            </div>
+
+            <nav x-show="expanded" x-collapse="" style="display: none;">
+                <div class="qf rf">
+                    <div class="kb nd">
+                        <a href="#" title="" class="ib gd jf m fg mg vg oh ph fe vh ki font-pj li ni qi"> Features </a>
+
+                        <a href="#" title="" class="ib gd jf m fg mg vg oh ph fe vh ki font-pj li ni qi"> Pricing </a>
+
+                        <a href="#" title="" class="ib gd jf m fg mg vg oh ph fe vh ki font-pj li ni qi"> Automation </a>
+
+                        <a href="#" title="" class="ib gd jf m fg mg vg oh ph fe vh ki font-pj li ni qi"> Customer Login </a>
+
+                        <a href="#" title="" class="jb gd id of vf fg ng rg wg oh ph we me pe fe uh font-pj ki mi qi ni" role="button">
+                            Sign up
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="cg xe qk" style="
+    padding-top: 3.7rem;
+">
+        <div class="nf n jc ik qn">
+            <div class="lc n eg">
+                
+                <p class="ab jg ng sg vg xk wk ao bo font-pj">A free HTTP based JSON<span class="c jb mj">
+                        <span class="af cf ef gf lh nh gh bc ob b g"></span>
+                        <span class="c">storage</span>
+                    </span>
+                </p>
+
+                <div class="tf sj uj kk dk nj eb" id="vemlo" style="
+    width: max-content !important;
+">
+                    
+
+                    <a title="" onclick="copyURL()"  id="copyBtn" class="hb bc nf mf fg vg eh ve re ni ei ke font-pj fh jb gd id bc of vf y ig ng vg oh ph ne se hj fe font-pj ki mi qi ni xh ii ci ji th ei" role="button" style="width: fit-content;width: max-content;">
+                        
+                        <op class="fb" id="boxid">https://jsonbox-v2.herokuapp.com/box_</op>
+                    
+
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></a>
+                </div>
+				<div class="tf sj uj kk dk nj eb" id="femlo" style="
+    width: max-content !important; display:none; padding:0px;
+">
+                    
+
+                    <a title="" onclick="copyURL()" id="copyBtn" class="hb bc nf mf fg vg eh ve re ni ei ke font-pj fh jb gd id bc of vf y ig ng vg oh ph ne se hj fe font-pj ki mi qi ni xh ii ci ji th ei" role="button" style="width: fit-content;width: max-content;">
+                        
+                        <op class="fb" id="boxid1"></op>
+                    
+
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></a>
+                </div>
+
+                <p class="u fg bh">JSONBox lets you Store, Read and Modify JSON data over HTTP APIs for free (for 30 days). Copy the URL below and start sending HTTP requests to play around with your data store.</p>
+            </div>
+        </div>
+
+        
+    </section>
+</div>
+<input id="hellofucking" style="margin-top: 500px;position: fixed;">
+<script>
+        var dt = new Date().getTime();
+        var uuid = 'xxyxxxxxxyxxxxxyxxxx'.replace(/[xy]/g, function(c) {
+            var r = (dt + Math.random() * 16) % 16 | 0;
+            dt = Math.floor(dt / 16);
+            return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16);
+        });
+        document.getElementById("boxid").innerHTML += uuid;
+		document.getElementById("boxid1").innerHTML = uuid;
+		document.getElementById("hellofucking").value = "https://jsonbox-v2.herokuapp.com/box_" + uuid;
+		
+		
+		const copyURL = () => {
 		/* Get the text field */
-		var copyText = document.getElementById('boxurl');
+		var copyText = document.getElementById('hellofucking');
 		/* Select the text field */
 		copyText.select();
 		copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 		/* Copy the text inside the text field */
 		document.execCommand('copy');
-		document.getElementById('copyBtn').style.color = '#27ae60';
+		document.getElementById('copyBtn').style.background = 'palegreen';
+		document.getElementById('copyBtn').style.color = 'black';
 		setTimeout(() => {
-			document.getElementById('copyBtn').style.color = '#333';
-		}, 3000);
+			document.getElementById('copyBtn').style.background = '';
+			document.getElementById('copyBtn').style.color = '';
+		}, 300);
+
 	};
-
-	function createUniqueID() {
-		var dt = new Date().getTime();
-		var uuid = 'xxyxxxxxxyxxxxxyxxxx'.replace(/[xy]/g, function(c) {
-			var r = (dt + Math.random() * 16) % 16 | 0;
-			dt = Math.floor(dt / 16);
-			return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16);
-		});
-		return uuid;
-	}
-	var base =
-		window.location.protocol +
-		'//' +
-		window.location.hostname +
-		(window.location.port ? ':' + window.location.port : '');
-	document.getElementById('boxurl').value = base + '/box_' + uniqueid;
-
-	</script>
-</body>
-
-</html>
+</script>
+</body></html>
