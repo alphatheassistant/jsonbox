@@ -3,8 +3,10 @@
   "builds": [
       {
           "src": "server.js",
-          "use": "@vercel/node"
-          "config": { "distDir": "www" }
+          "use": "@vercel/node",
       }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "www" }
   ]
 }
